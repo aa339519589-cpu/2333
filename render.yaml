@@ -1,11 +1,16 @@
-# Redeploy trigger: 2026-07-11
 services:
   - type: web
     name: aether-grid
     runtime: static
-    buildCommand: npm install && npm run build
+    repo: https://github.com/aa339519589-cpu/2333
+    branch: main
+    plan: free
+    buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
     autoDeployTrigger: commit
+    envVars:
+      - key: NODE_VERSION
+        value: 22.16.0
     routes:
       - type: rewrite
         source: /*
