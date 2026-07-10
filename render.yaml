@@ -1,3 +1,4 @@
+# Redeploy trigger: 2026-07-11
 services:
   - type: web
     name: aether-grid
